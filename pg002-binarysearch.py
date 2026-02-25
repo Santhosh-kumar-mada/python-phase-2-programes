@@ -1,15 +1,16 @@
-def binary_search(l,k):
-    low = 0
-    high = len(l)-1
-    while low<=high:
-        mid = (low+high)/2
-        if l[mid]==k:
+def binary_search(a,k):
+    l = 0
+    h = len(a)-1
+    while l <= h:
+        mid = (l+h)//2
+        if a[mid] == k:
             return mid
-        elif l[mid]>k:
-            low = mid+1
+        elif a[mid] < k:
+            l = mid +1
         else:
-            high = mid-1
-            
-li = [1,2,3,4,5,6,7,8]
-k = 7
-binary_search(li,k)
+            h = mid-1
+    return -1
+
+array = [1,2,3,4,5,6,7]
+key = 3
+print(binary_search(array,key))
