@@ -10,4 +10,11 @@ def aggressive_cows_linear(stalls, cows):
             if stalls[i]-last_position >= distance:
                 count += 1
                 last_position = stalls[i]
-            
+            if count == cows:
+                answer = distance
+            else:
+                break
+    return answer
+
+a = [10,1,2,7,5]
+print(aggressive_cows_linear(a,3))
