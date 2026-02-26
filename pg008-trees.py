@@ -10,7 +10,15 @@ def inorder(root):
     if root == None:
         return
     inorder(root.left)
-    print(root.data ,end =" ")
+    print(root.data , end=" ")
+    inorder(root.right)
+
+def inorder_prime(root):
+    if root == None:
+        return
+    inorder(root.left)
+    if prime(root.data):
+        print(root.data)
     inorder(root.right)
 
 
@@ -72,14 +80,25 @@ def maxi(root):
 
 #max number in a tree
 def max(root):
-    while root:
-        if root.right == None:
-            print(root.data)
-            return
-            
-        else:
-            max(root.right)
-            return
+    if root.right == None:
+        print(root.data)      
+    else:
+        max(root.right)
+
+
+#prime numbers
+def prime(n):
+    count = 0
+    for i in range(1,n+1):
+        if n%i == 0:
+            count+=1
+    if count ==2:
+        return True
+    else:
+        return False
+
+
+
 
 #creating the tree
 root =None
@@ -103,3 +122,5 @@ min(root)
 print("\n max")
 max(root)
 print("max sir method",maxi(root))
+print("prime numbers :")
+inorder_prime(root)
