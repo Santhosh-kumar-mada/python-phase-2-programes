@@ -7,7 +7,7 @@ def find(arr,x):
             if arr[m]>=x:
                 r = m-1
             else:
-                l = mid+1
+                l = m+1
             if arr[m] == x:
                 ans = m 
             return ans
