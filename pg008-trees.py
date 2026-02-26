@@ -106,6 +106,18 @@ def height(root):
         return 0
     return 1+max(height(root.left),height(root.right))
 
+
+#searching in tree
+def search (root,key):
+    if root == None:
+        return False
+    if root.data == key:
+        return True
+    if key<root.data:
+        return search(root.left,key)
+    else:
+        return search (root.right,key)
+
 #creating the tree
 root =None
 root = insert(root, 10)
@@ -134,3 +146,5 @@ print("\nroot count : ")
 print(countnodes(root))
 print("\n height of tree : ",end =" ")
 print(height(root))
+print("\n searching with 18 : ",end = " ")
+print(search(root,15))
