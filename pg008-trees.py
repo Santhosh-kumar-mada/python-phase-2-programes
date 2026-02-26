@@ -63,7 +63,12 @@ def min(root):
         else:
             min(root.left)
             return
-    
+#maxi sir code for max  
+def maxi(root):
+    temp = root
+    while temp.right:
+        temp = temp.right
+    return temp.data
 
 #max number in a tree
 def max(root):
@@ -97,3 +102,4 @@ print("\n min")
 min(root)
 print("\n max")
 max(root)
+print("max sir method",maxi(root))
