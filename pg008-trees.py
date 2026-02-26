@@ -63,14 +63,14 @@ def level_order(root):
 
 #min number in a tree
 def min(root):
-    while root:
-        if root.left == None:
-            print(root.data)
-            return
+    
+    if root.left == None:
+        print(root.data)
             
-        else:
-            min(root.left)
-            return
+            
+    else:
+        min(root.left)
+            
 #maxi sir code for max  
 def maxi(root):
     temp = root
@@ -97,6 +97,11 @@ def prime(n):
     else:
         return False
 
+#countnodes
+def countnodes(root):
+    if root == None:
+        return 0
+    return 1 + countnodes(root.left)+countnodes(root.right)
 
 
 
@@ -109,18 +114,21 @@ insert(root, 3)
 insert(root, 7)
 insert(root, 12)
 insert(root, 18)
-print("inorder traversal of the tree is :")
+print("\n inorder traversal of the tree is : ")
 inorder(root)
-print("\npreorder traversal of the tree is :")
+print("\n preorder traversal of the tree is : ")
 preorder(root)
-print("\npostorder traversal of the tree is :")
+print("\n postorder traversal of the tree is : ")
 postorder(root)
-print("\nlevel order traversal of the tree is :")
+print("\n level order traversal of the tree is : ")
 level_order(root)
-print("\n min")
+print("\n min : ")
 min(root)
-print("\n max")
+print("\n max : ")
 max(root)
-print("max sir method",maxi(root))
-print("prime numbers :")
+print("\n max sir method : ",maxi(root))
+print("\n prime numbers : ")
 inorder_prime(root)
+
+print("\nroot count : ")
+print(countnodes(root))
