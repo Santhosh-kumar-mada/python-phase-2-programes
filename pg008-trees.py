@@ -49,7 +49,7 @@ def insert(root,key):
     return root
 
 #dfs traversal
-def level_order(root):
+def level_order(root):  
     if root == None:
         return
     q = [root]
