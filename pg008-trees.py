@@ -118,6 +118,41 @@ def search (root,key):
     else:
         return search (root.right,key)
 
+#inorder traversal with llist
+def inorderTraversal(root):
+    li=[]
+    def inorder(root):
+        if root ==None:
+            return 
+        inorder(root.left)
+        li.append(root.data)
+        inorder(root.right)
+    inorder(root)
+    return li
+
+
+#leetcode searching problem
+def searchBST(root, val):
+        if root is None or root.data == val:
+            return root
+        if val<root.data:
+           return searchBST(root.left,val)
+        else:
+            return searchBST(root.right,val)
+        
+
+#Symetric tree
+def symetricornot(root,):
+    def dfs(left,right):    
+        if left is None and right is None:
+            return True
+        if not left or not right:
+            return False
+        return left.val == right.val and dfs(left.left , right.right) and dfs(left.right, right.left)
+
+    dfs(float('-inf'),float('inf'))
+    
+
 #creating the tree
 root =None
 root = insert(root, 10)
@@ -148,3 +183,7 @@ print("\n height of tree : ",end =" ")
 print(height(root))
 print("\n searching with 18 : ",end = " ")
 print(search(root,15))
+print(inorderTraversal(root))
+print("hello")
+searchBST(root,10)
+symetricornot(root)
