@@ -48,7 +48,7 @@ def insert(root,key):
         root.right = insert(root.right,key)
     return root
 
-#dfs traversal
+#bfs traversal
 def level_order(root):  
     if root == None:
         return
